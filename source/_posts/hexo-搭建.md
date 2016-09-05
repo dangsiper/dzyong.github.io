@@ -81,3 +81,12 @@ git add .
 git commit
 git push origin hexo
 ```
+* 其他人下载
+
+```
+git clone git@github.com:dzyong/dzyong.github.io.git -b hexo
+cd dzyong.github.io.git
+npm install
+hexo g
+hexo S
+```
