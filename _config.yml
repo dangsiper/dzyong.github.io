@@ -4,15 +4,15 @@
 
 # Site
 title: Dangzy
-subtitle:
-description:
-author: John Doe
-language:
-timezone:
+subtitle: Live for dream
+description: 为梦想而生
+author: dangzy
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://blog.csdn.net/dangzy
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
