@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>hexo 搭建 | Dangzy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="安装node.js(https://nodejs.org/en/)
+
+1https://nodejs.org/dist/v4.5.0/node-v4.5.0-x64.msi
+
+github建立github pages仓库(https://pages.github.com/)
+
+1git@github.com:dzyong/dzyong.github.io.git
+
+本地clone上面建立的仓库">
+<meta property="og:type" content="article">
+<meta property="og:title" content="hexo 搭建">
+<meta property="og:url" content="http://blog.csdn.net/dangzy/2016/09/05/hexo-搭建/index.html">
+<meta property="og:site_name" content="Dangzy">
+<meta property="og:description" content="安装node.js(https://nodejs.org/en/)
+
+1https://nodejs.org/dist/v4.5.0/node-v4.5.0-x64.msi
+
+github建立github pages仓库(https://pages.github.com/)
+
+1git@github.com:dzyong/dzyong.github.io.git
+
+本地clone上面建立的仓库">
+<meta property="og:updated_time" content="2016-09-10T09:45:37.621Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="hexo 搭建">
+<meta name="twitter:description" content="安装node.js(https://nodejs.org/en/)
+
+1https://nodejs.org/dist/v4.5.0/node-v4.5.0-x64.msi
+
+github建立github pages仓库(https://pages.github.com/)
+
+1git@github.com:dzyong/dzyong.github.io.git
+
+本地clone上面建立的仓库">
+  
+    <link rel="alternate" href="/atom.xml" title="Dangzy" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Dangzy</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Live for dream</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://blog.csdn.net/dangzy"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-hexo-搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/09/05/hexo-搭建/" class="article-date">
+  <time datetime="2016-09-05T12:41:34.000Z" itemprop="datePublished">2016-09-05</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      hexo 搭建
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>安装node.js(<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a>)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">https://nodejs.org/dist/v4.5.0/node-v4.5.0-x64.msi</div></pre></td></tr></table></figure>
+<ul>
+<li>github建立github pages仓库(<a href="https://pages.github.com/" target="_blank" rel="external">https://pages.github.com/</a>)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git@github.com:dzyong/dzyong.github.io.git</div></pre></td></tr></table></figure>
+<ul>
+<li>本地clone上面建立的仓库</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git clone git@github.com:dzyong/dzyong.github.io.git</div></pre></td></tr></table></figure>
+<ul>
+<li>初始化hexo</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo init dzyong.github.io</div></pre></td></tr></table></figure>
+<ul>
+<li>安装hexo的git插件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
+<ul>
+<li>配置_config.yml中的deploy</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:dzyong/dzyong.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure>
+<ul>
+<li>新建blog</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo new &lt;blog name&gt;</div></pre></td></tr></table></figure>
+<ul>
+<li>生成静态文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate(g)</div></pre></td></tr></table></figure>
+<ul>
+<li>查看预览</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo server(S)</div></pre></td></tr></table></figure>
+<ul>
+<li>上传生成的静态文件</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo deploy</div></pre></td></tr></table></figure>
+<ul>
+<li>新建github分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git remote add -f origin git@github.com:dzyong/dzyong.github.io.git</div><div class="line">git checkout -b hexo</div></pre></td></tr></table></figure>
+<ul>
+<li>生成.gitignore</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.DS_Store</div><div class="line">Thumbs.db</div><div class="line">db.json</div><div class="line">*.log</div><div class="line">node_modules/</div><div class="line">public/</div><div class="line">.deploy*/</div></pre></td></tr></table></figure>
+<ul>
+<li>提交源码</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git add .</div><div class="line">git commit</div><div class="line">git push origin hexo</div></pre></td></tr></table></figure>
+<ul>
+<li>其他人下载</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">git clone git@github.com:dzyong/dzyong.github.io.git -b hexo</div><div class="line">cd dzyong.github.io.git</div><div class="line">npm install</div><div class="line">hexo g</div><div class="line">hexo S</div></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://blog.csdn.net/dangzy/2016/09/05/hexo-搭建/" data-id="cisx0xkwh0001yk31xeku4qzj" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/09/10/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/10/葡萄/">葡萄</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/10/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/09/05/hexo-搭建/">hexo 搭建</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 dangzy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
