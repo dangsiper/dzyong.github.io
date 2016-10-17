@@ -8,6 +8,7 @@ tags:
 * 利用web上传业务直接上传webshell，有时也会返回上传的路径。没有返回的话也可以通过其他途径获得。
 * 利用网站代码缺陷，比如SQL注入等，植入webshell脚本。用命令来往指定的目录写入文件。
 
+***
 参考网站
 
 [安全知识之Webshell攻击介绍](http://www.myhack58.com/Article/html/3/8/2016/78339.htm)

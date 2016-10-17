@@ -13,6 +13,7 @@ SQL支持 # 到该行结束、\-\- 到该行结束 以及 /\* 行中间或多个
 
 SQL注入后即可以获取数据库信息，也可以进一步拿到web shell。
 
+***
 参考网站
 
 [SQL注入原理讲解](http://blog.csdn.net/stilling2006/article/details/8526458)
