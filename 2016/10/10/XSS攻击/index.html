@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>XSS攻击 | Dangzy</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="跨站脚本攻击(Cross Site Scripting): 恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。
+1) 恶意用户在一些公共区域( 例如建议提交表单或消息公共板的输入表单 )输入一些文本，这些文本被其它用户看到，但这些文本不仅仅是恶意用户要输入的文本，同时还包括一些可以在客户端执行的脚本。如：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="XSS攻击">
+<meta property="og:url" content="https://dzyong.github.io/2016/10/10/XSS攻击/index.html">
+<meta property="og:site_name" content="Dangzy">
+<meta property="og:description" content="跨站脚本攻击(Cross Site Scripting): 恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。
+1) 恶意用户在一些公共区域( 例如建议提交表单或消息公共板的输入表单 )输入一些文本，这些文本被其它用户看到，但这些文本不仅仅是恶意用户要输入的文本，同时还包括一些可以在客户端执行的脚本。如：">
+<meta property="og:image" content="https://dzyong.github.io/img/XSSAttack.jpg">
+<meta property="og:updated_time" content="2016-10-17T15:15:03.587Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="XSS攻击">
+<meta name="twitter:description" content="跨站脚本攻击(Cross Site Scripting): 恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。
+1) 恶意用户在一些公共区域( 例如建议提交表单或消息公共板的输入表单 )输入一些文本，这些文本被其它用户看到，但这些文本不仅仅是恶意用户要输入的文本，同时还包括一些可以在客户端执行的脚本。如：">
+<meta name="twitter:image" content="https://dzyong.github.io/img/XSSAttack.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Dangzy" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Dangzy</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Live for dream</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://dzyong.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-XSS攻击" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/10/10/XSS攻击/" class="article-date">
+  <time datetime="2016-10-10T14:45:37.000Z" itemprop="datePublished">2016-10-10</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      XSS攻击
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>跨站脚本攻击(Cross Site Scripting): 恶意攻击者往Web页面里插入恶意Script代码，当用户浏览该页之时，嵌入其中Web里面的Script代码会被执行，从而达到恶意攻击用户的目的。</p>
+<p>1) 恶意用户在一些公共区域<br>( 例如建议提交表单或消息公共板的输入表单 )输入一些文本，这些文本被其它用户看到，但这些文本不仅仅是恶意用户要输入的文本，同时还包括一些可以在客户端执行的脚本。如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">this.document = &quot;*********&quot;;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure></p>
+<p>2) 恶意提交这个表单<br>3) 其他用户看到这个包括恶意脚本的页面并执行，获取用户的cookie等敏感信息。<br><img src="img/XSSAttack.jpg" alt="XSS" title="xss"></p>
+<p>xss攻击可以分成两种类型：</p>
+<p>1.非持久型攻击</p>
+<p>2.持久型攻击</p>
+<p>上面那个属于持久型攻击。具体解释参考下面的”xss攻击入门”。</p>
+<hr>
+<p>参考网站</p>
+<p><a href="http://www.cnblogs.com/bangerlee/archive/2013/04/06/3002142.html" target="_blank" rel="external">xss攻击入门</a></p>
+<p><a href="http://netsecurity.51cto.com/art/201408/448305_all.htm" target="_blank" rel="external">XSS的原理分析与解剖</a></p>
+<p><a href="http://blog.csdn.net/ghsau/article/details/17027893" target="_blank" rel="external">XSS攻击及防御</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://dzyong.github.io/2016/10/10/XSS攻击/" data-id="ciue77omv0004f431tss1i2fy" class="article-share-link">分享</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/10/03/Web-Shell/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Web Shell</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/10/">十月 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">九月 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/10/10/XSS攻击/">XSS攻击</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/03/Web-Shell/">Web Shell</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/03/SQL注入/">SQL注入</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/02/TCP-sync-flood/">TCP sync flood</a>
+          </li>
+        
+          <li>
+            <a href="/2016/10/02/程序加壳加花/">程序加壳加花</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 dangzy<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.aspnetcdn.com/ajax/jquery/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
